@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta name="description" content="Search Unsplash photos with XMLHttpRequest and the Fetch API." />
+    <title>Fieldnotes — Unsplash Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Fieldnotes home"><span class="brand-mark" aria-hidden="true">✳</span> fieldnotes</a>
+      <span class="topbar-note">A little window into everywhere</span>
+      <a class="topbar-link" href="https://unsplash.com" target="_blank" rel="noreferrer">Powered by Unsplash <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE WORLD, IN FRAMES</p>
+          <h1 id="page-title">Find your<br /><em>next somewhere.</em></h1>
+          <p class="intro">A visual search for the places, details, and daydreams you can’t stop thinking about.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-sun"></div><div class="art-hill hill-back"></div><div class="art-hill hill-front"></div>
+          <div class="art-stamp">VOL. 07<br /><span>THE FIELD GUIDE</span></div>
+          <div class="art-caption">Somewhere, in good light.</div>
+        </div>
+      </section>
+
+      <section class="search-panel" aria-label="Photo search">
+        <form id="search-form">
+          <label class="search-label" for="query">What are you looking for?</label>
+          <div class="search-row">
+            <div class="query-wrap"><span class="search-icon" aria-hidden="true">⌕</span><input id="query" name="query" type="search" placeholder="Try ‘quiet mornings’ or ‘coastal roads’" required autocomplete="off" /></div>
+            <button class="search-button" type="submit">Explore <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="controls-row">
+            <div class="method-control"><label for="method">REQUEST METHOD</label><select id="method" name="method"><option value="async">Fetch · async/await</option><option value="promise">Fetch · Promises</option><option value="xhr">XMLHttpRequest</option></select></div>
+            <details class="key-details">
+              <summary><span class="key-dot" aria-hidden="true"></span> API key <span class="summary-state">Add your key</span></summary>
+              <div class="key-content"><label for="api-key">UNSPLASH ACCESS KEY</label><div class="key-entry"><input id="api-key" type="password" placeholder="Paste your Access Key" autocomplete="off" /><button id="save-key" type="button">Save on this device</button></div><p>Your key is stored only in this browser and is never included in this project.</p><a href="https://unsplash.com/developers" target="_blank" rel="noreferrer">Get an Unsplash key ↗</a></div>
+            </details>
+          </div>
+        </form>
+      </section>
+
+      <section class="results-section" aria-live="polite" aria-busy="false">
+        <div class="results-heading"><div><p class="eyebrow result-eyebrow">THE COLLECTION</p><h2 id="results-title">A few places to begin</h2></div><span id="result-count" class="result-count">READY WHEN YOU ARE</span></div>
+        <div id="status" class="status-message" role="status">Add an Unsplash Access Key, then search for something you’d like to see.</div>
+        <div id="gallery" class="gallery"></div>
+        <button id="load-more" class="load-more" type="button" hidden>Load more photos <span aria-hidden="true">↓</span></button>
+      </section>
+    </main>
+
+    <footer><span>Made for CPIT-405 · Lab 7</span><span>Curiosity looks good on you <span aria-hidden="true">✳</span></span></footer>
+  </body>
+</html>
