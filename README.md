@@ -6,7 +6,7 @@ A responsive Unsplash photo search page demonstrating three asynchronous JavaScr
 - `fetch()` with Promises and `.then()` / `.catch()`
 - `fetch()` with `async` / `await`
 
-It also creates result cards with the DOM API and handles form submission, keyboard submission, and the load-more button.
+It also creates result cards with the DOM API, handles mouse clicks for the controls, and explicitly handles the Enter key in the search field.
 
 ## Run it
 

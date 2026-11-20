@@ -45,6 +45,13 @@ form.addEventListener("submit", (event) => {
   searchPhotos();
 });
 
+queryInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    form.requestSubmit();
+  }
+});
+
 loadMoreButton.addEventListener("click", () => {
   currentPage += 1;
   searchPhotos(true);
