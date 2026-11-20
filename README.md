@@ -1,4 +1,4 @@
-# CPIT-405 Lab 7 — Fieldnotes
+# CPIT-405 Lab 7
 
 A responsive Unsplash photo search page demonstrating three asynchronous JavaScript approaches:
 
